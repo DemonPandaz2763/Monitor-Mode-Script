@@ -1,5 +1,6 @@
 import click
 import subprocess
+import pyfiglet
 
 @click.group()
 def my_cmds():
@@ -8,6 +9,10 @@ def my_cmds():
 @click.command(help="Enable monitor mode on interface")
 @click.option("-i", "--interface", prompt="Select interface", help="Select your interface.")
 def enable(interface):
+
+    ascii_banner = pyfiglet.figlet_format("ENABLING INTERFACE")
+    print(ascii_banner)
+    
     try:
         subprocess.run(['sudo', 'ifconfig', interface, 'down'], check=True)
         print(f"Disabled interface {interface}. -_-")
@@ -22,6 +27,10 @@ def enable(interface):
 @click.command(help="Disable monitor mode on interface")
 @click.option("-i", "--interface", prompt="Select interface", help="Select your interface.")
 def disable(interface):
+
+    ascii_banner = pyfiglet.figlet_format("DISABLING INTERFACE")
+    print(ascii_banner)
+    
     try:
         subprocess.run(['sudo', 'ifconfig', interface, 'down'], check=True)
         print(f"Disabled interface {interface}. -_-")
