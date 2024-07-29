@@ -1,5 +1,6 @@
 # Wifi Monitor Script
 This was made by a noob for other noobs (or anyone who wants to use it)
+All it does is puts a wireless wifi interface into monitor mode using iw commands.
 
 ### Usage:
 
